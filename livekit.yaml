@@ -1,0 +1,21 @@
+# livekit.yaml – LiveKit Server Konfiguration
+# Dokumentation: https://docs.livekit.io/realtime/self-hosting/deployment/
+
+port: 7880
+rtc:
+  port_range_start: 50000
+  port_range_end: 60000
+  tcp_port: 7881
+  use_external_ip: true
+
+# Redis für Multi-Node (gleiche Instanz wie PresenceService möglich)
+redis:
+  address: localhost:6379
+
+# Keys – in .env überschreiben!
+keys:
+  devkey: secret   # wird durch .env ersetzt
+
+logging:
+  level: info
+  json: false
